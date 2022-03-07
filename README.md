@@ -1,27 +1,35 @@
-# AngularElfTailwind
+# Angular Elf Tailwind and Typed Forms.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
+Angular template using, Elf as state management, Tailwind for styling and Typed Forms for managing forms.
+Can be used in projects where team conventions is important/necessary. Say for a new team or a big project.
 
-## Development server
+# Project Structure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## API Proxies
 
-## Code scaffolding
+Typically services the is either generated from an OpenAPI-spec or a GraphQL schema.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## API Services
 
-## Build
+Wrapper for API-proxies used in Elf-repositories or Typed Form services. Generally everywhere state is stored.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Mappers
 
-## Running unit tests
+Mappers live along side API Services, to ensure easier DTO to frontend mapping. These are only injected in API services.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Elf Repositories
 
-## Running end-to-end tests
+Application wide state services. Manages state and stores state to query from an observable.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Typed Forms
 
-## Further help
+Forms the way it should be... Ensures typing on the forms you create. Also shares state between related and unrelated Forms.
+Say a input from a General-form directly impacts wether or not a date-picker should show or not in a Voucher-form.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Component Types
+
+**Layout** typically wraps either the application or the current page. Here we have stuff like navigation, headers and footers.
+**Pages** will usually map directly to a Route in angular. This is where you organize how the diferent components for the current page is presented.
+**Components** Components composed by UI-components: combining a label+input to make a TextField for a form. Will sometimes also be components composed by other components, e.g. FilteredList of TextFields.
+**Forms** are composed by Components and uses FormServices to keep state updated on the form.
+**UI** small reuseable components, inputs, tables, list, labels, buttons etc...
