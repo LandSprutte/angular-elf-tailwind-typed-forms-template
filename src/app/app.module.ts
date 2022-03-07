@@ -7,6 +7,7 @@ import { ApiProxiesModule } from './api-proxies/api-proxies.module';
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app.routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SalesModule } from './sales/sales.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ApiProxiesModule,
     AuthModule,
+    SalesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -8,6 +8,11 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
+  {
+    path: 'sales',
+    loadChildren: () =>
+      import('./sales/sales.module').then((m) => m.SalesModule),
+  },
 ]; // sets up routes constant where you define your routes
 
 // configures NgModule imports and exports
