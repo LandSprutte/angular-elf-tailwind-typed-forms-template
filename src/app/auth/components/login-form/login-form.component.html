@@ -1,0 +1,25 @@
+<form class="flex flex-col p-10" [formGroup]="form">
+  <label for="email"><b>Email</b></label>
+  <input
+    type="text"
+    placeholder="Enter email"
+    name="email"
+    [formControl]="form.controls.email"
+  />
+
+  <label class="mt-5" for="psw"><b>Password</b></label>
+  <input
+    type="password"
+    placeholder="Enter Password"
+    name="psw"
+    [formControl]="form.controls.password"
+  />
+
+  <button
+    [disabled]="form.invalid"
+    class="p-5 bg-slate-200 hover:bg-blue-400 rounded mt-5 cursor-pointer"
+    (click)="submit($event)"
+  >
+    Login
+  </button>
+</form>
